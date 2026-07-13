@@ -1,1 +1,359 @@
-apologize
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sayang maafin aku ya</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#f8f3ff,#efe4ff,#e5d4ff,#d8c0ff);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+
+
+.container{
+width:90%;
+max-width:700px;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(18px);
+padding:40px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 15px 40px rgba(122,80,180,.18);
+border:1px solid rgba(255,255,255,.4);
+z-index:10;
+position:relative;
+animation:muncul 1s;
+}
+
+h1{
+color:#6f42c1;
+font-size:42px;
+margin-bottom:15px;
+}
+
+
+p{
+color:#5d4d75;
+font-size:18px;
+line-height:1.9;
+margin-bottom:30px;
+}
+
+button{
+position:relative;
+padding:16px 42px;
+margin:12px;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+
+background:linear-gradient(
+135deg,
+#b56cff,
+#9d4edd,
+#c77dff,
+#e0aaff);
+
+background-size:300% 300%;
+
+animation:gradientButton 5s ease infinite;
+
+box-shadow:
+0 10px 25px rgba(157,78,221,.45),
+0 0 20px rgba(199,125,255,.5);
+
+transition:.35s;
+overflow:hidden;
+}
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+top:-50%;
+left:-50%;
+
+width:200%;
+height:200%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.5),
+transparent);
+
+transform:rotate(25deg);
+
+animation:shine 4s infinite;
+
+}
+
+button:hover{
+
+transform:translateY(-4px) scale(1.08);
+
+box-shadow:
+0 15px 35px rgba(157,78,221,.7),
+0 0 40px rgba(199,125,255,.8);
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+@keyframes jatuh{
+
+0%{
+
+transform:
+translateY(-120px)
+translateX(0)
+rotate(0deg)
+scale(.8);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+50%{
+
+transform:
+translateY(50vh)
+translateX(40px)
+rotate(180deg)
+scale(1.1);
+
+}
+
+100%{
+
+transform:
+translateY(110vh)
+translateX(-40px)
+rotate(360deg)
+scale(.9);
+
+opacity:0;
+
+}
+
+}
+
+
+@keyframes shine{
+
+0%{left:-150%;}
+
+100%{left:150%;}
+
+}
+
+#hasil{
+display:none;
+margin-top:30px;
+animation:fade 1s;
+}
+
+#hasil img{
+width:250px;
+height:250px;
+object-fit:cover;
+border-radius:20px;
+border:6px solid #ffc1d6;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+#hasil h2{
+margin-top:20px;
+font-size:36px;
+color:#ff3f7f;
+}
+
+.mawar{
+position:fixed;
+top:-50px;
+font-size:30px;
+animation:jatuh linear infinite;
+pointer-events:none;
+.mawar::after{
+
+content:"";
+
+position:absolute;
+
+width:10px;
+height:10px;
+
+background:white;
+
+border-radius:50%;
+
+left:28px;
+top:8px;
+
+box-shadow:
+
+0 0 8px white,
+
+0 0 15px #d8b4fe,
+
+0 0 25px #b56cff;
+
+animation:blink 1.5s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+opacity:.3;
+transform:scale(.5);
+
+}
+
+}
+}
+
+@keyframes jatuh{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+@keyframes muncul{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:scale(.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>aku minta maaf sayang</h1>
+
+<p>
+Aku memang kadang ga becus 
+tapi aku mau kamu tau satu hal
+kalo aku bener bener sayang sama kamu
+iloveyousooooOoooomuch istriku,sayangku,cintaku,segalanya buat aku.
+</p>
+
+<button onclick="muncul()"> Dimaafin</button>
+
+<button onclick="muncul()"> Wajib Dimaafin</button>
+
+<div id="hasil">
+
+<img src="https://i.postimg.cc/wjgF8hJ1/Whats-App-Image-2026-07-13-at-20-40-26.jpg">
+
+<h2>mau sleepcall ga malam ini?</h2>
+
+
+</div>
+
+<script>
+
+function muncul(){
+
+document.getElementById("hasil").style.display="block";
+
+}
+
+function bunga(){
+
+let bunga=document.createElement("div");
+
+bunga.classList.add("mawar");
+
+bunga.innerHTML="🌹";
+
+bunga.style.left=Math.random()*100+"vw";
+
+bunga.style.animationDuration=(4+Math.random()*5)+"s";
+
+bunga.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(bunga);
+
+setTimeout(()=>{
+bunga.remove();
+},9000);
+
+}
+
+</script>
+
+
+</body>
+</html>
